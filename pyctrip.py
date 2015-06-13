@@ -19,10 +19,11 @@ import xmltodict
 
 class CtripError(StandardError):
     def __init__(self, error):
-        StandardError.__init__(self, error)
+        self._error = error
+        StandardError.__init__(self, self._error)
 
     def __str__(self):
-        return 'CtripError:', error
+        return 'CtripError:', self._error
 
 
 class CtripClient(object):
