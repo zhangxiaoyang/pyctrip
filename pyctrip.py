@@ -23,7 +23,7 @@ class CtripError(StandardError):
         StandardError.__init__(self, self._error)
 
     def __str__(self):
-        return 'CtripError:', self._error
+        return 'CtripError: %s' % str(self._error)
 
 
 class CtripClient(object):
